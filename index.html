@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Please wait...</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      color: #333;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+    #countdown {
+      font-weight: bold;
+      font-size: 24px;
+      color: #007bff;
+    }
+  </style>
+  <script>
+    const links = [
+      "https://oii.la/XO1P",
+      "https://shrinkme.ink/vOKQ1M",
+      "http://adfoc.us/8732531",
+    ];
+    let countdown = 5;
+
+    function updateCountdown() {
+      document.getElementById('countdown').textContent = countdown;
+      if (countdown === 0) {
+        const randomLink = links[Math.floor(Math.random() * links.length)];
+        window.location.href = randomLink;
+      } else {
+        countdown--;
+        setTimeout(updateCountdown, 1000);
+      }
+    }
+
+    window.onload = updateCountdown;
+  </script>
+</head>
+<body>
+  <h1>Please wait, you are being redirected...</h1>
+  <p>Redirecting in <span id="countdown">5</span> seconds.</p>
+  <p>You will be redirected shortly.</p>
+</body>
+</html>
